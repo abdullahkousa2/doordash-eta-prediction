@@ -30,6 +30,24 @@ MODELS = {q: joblib.load(MODEL_DIR / f"quantile_{q}.joblib") for q in ("p10", "p
 
 DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
+# --- Hugging Face ZeroGPU compatibility --------------------------------------
+# HF's free tier now offers only ZeroGPU for new Spaces, and a ZeroGPU Space
+# refuses to start unless it detects a @spaces.GPU function ("No @spaces.GPU
+# function detected during startup"). This model is pure CPU (XGBoost), so we
+# register one tiny probe to satisfy that startup check and keep the real
+# inference on CPU — no GPU is requested per prediction. Guarded in try/except
+# so the app still runs locally, where the `spaces` package isn't installed.
+try:  # pragma: no cover - platform-specific
+    import spaces
+
+    @spaces.GPU
+    def _zerogpu_startup_probe():
+        """Exists only so ZeroGPU Spaces pass their startup check."""
+        return "ok"
+
+except Exception:  # not on HF / package unavailable -> plain CPU app
+    pass
+
 
 def _build_row(hour, day, cuisine, market, total_items, subtotal, distinct_items, busyness):
     """Turn friendly UI inputs into one raw row the trained pipeline understands."""

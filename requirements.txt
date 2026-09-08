@@ -1,6 +1,7 @@
 # Runtime deps for the hosted Gradio demo (Hugging Face Spaces installs this file).
 # Versions are pinned to match what the models were trained/pickled with.
 gradio>=6.0
+spaces          # required by HF ZeroGPU Spaces (free tier); unused locally
 pandas>=2.0
 numpy<2
 scikit-learn==1.7.2
