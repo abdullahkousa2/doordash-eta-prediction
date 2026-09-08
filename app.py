@@ -93,7 +93,7 @@ CSS = """
 #dd-foot a{color:#eb1700;text-decoration:none;}
 """
 
-with gr.Blocks(css=CSS, title="DoorDash ETA Predictor", theme=gr.themes.Soft()) as demo:
+with gr.Blocks(title="DoorDash ETA Predictor") as demo:
     gr.HTML(
         '<div id="dd-head"><h1>Door<span>Dash</span> ETA Predictor</h1>'
         '<span class="dd-pill"><span class="dd-dot"></span>model online</span></div>'
@@ -133,4 +133,5 @@ with gr.Blocks(css=CSS, title="DoorDash ETA Predictor", theme=gr.themes.Soft()) 
     )
 
 if __name__ == "__main__":
-    demo.launch()
+    # Gradio 6 moved css/theme from the Blocks constructor to launch()
+    demo.launch(css=CSS, theme=gr.themes.Soft())

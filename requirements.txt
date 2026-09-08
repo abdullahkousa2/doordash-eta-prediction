@@ -1,6 +1,6 @@
 # Runtime deps for the hosted Gradio demo (Hugging Face Spaces installs this file).
 # Versions are pinned to match what the models were trained/pickled with.
-gradio>=4.44
+gradio>=6.0
 pandas>=2.0
 numpy<2
 scikit-learn==1.7.2
