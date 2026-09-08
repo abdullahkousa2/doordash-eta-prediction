@@ -1,0 +1,8 @@
+# Everything needed to reproduce the training pipeline (EDA, models, local demo).
+-r requirements.txt
+
+torch>=2.0
+matplotlib>=3.7
+seaborn>=0.12
+fastapi>=0.110
+uvicorn>=0.29

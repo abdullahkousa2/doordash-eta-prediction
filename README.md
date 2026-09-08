@@ -3,10 +3,11 @@ title: DoorDash ETA Predictor
 emoji: 🚗
 colorFrom: red
 colorTo: gray
-sdk: docker
-app_port: 8000
+sdk: gradio
+app_file: app.py
 pinned: false
 license: mit
+short_description: Predicts DoorDash delivery time with an uncertainty range
 ---
 
 # 🚗 DoorDash ETA Prediction
@@ -93,8 +94,9 @@ doordash-eta-prediction/
 
 **1. Install**
 ```bash
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 ```
+(`requirements.txt` alone holds just the lightweight deps the hosted demo needs.)
 
 **2. Get the data** (`historical_data.csv`, DoorDash's public take-home dataset)
 ```bash
@@ -111,9 +113,13 @@ python src/train_nn.py         # embedding neural net
 python src/evaluate.py         # final comparison table + chart
 ```
 
-**4. Run the demo**
+**4. Run a demo** — two are included:
+
 ```bash
-python run_app.py              # -> http://localhost:8000
+python app.py                  # Gradio demo (this is what runs on Hugging Face)
+```
+```bash
+python run_app.py              # FastAPI demo w/ custom UI -> http://localhost:8000
 ```
 
 ## 🛠️ Tech stack
