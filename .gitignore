@@ -1,0 +1,34 @@
+# Data (downloaded separately - see README)
+data/*.csv
+data/*.parquet
+data/*.DS_Store
+
+# Trained models / artifacts
+# The 3 quantile models + the small JSONs ARE committed — the deployed demo
+# needs them to run. The big baseline/NN weights are reproducible via src/.
+models/*.pt
+models/*.pkl
+models/*.joblib
+!models/quantile_p10.joblib
+!models/quantile_p50.joblib
+!models/quantile_p90.joblib
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# Outputs
+outputs/
+*.log
+# NOTE: figures/ is intentionally committed — the README displays these charts.
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

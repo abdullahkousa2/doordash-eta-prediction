@@ -1,0 +1,8 @@
+{
+  "model": "xgboost_baseline",
+  "n_train": 157827,
+  "n_test": 39456,
+  "rmse_minutes": 14.853373492129155,
+  "mae_minutes": 10.657463592617988,
+  "baseline_mean_rmse_minutes": 18.72855151412717
+}

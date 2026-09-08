@@ -1,0 +1,6 @@
+{
+  "model": "embedding_mlp",
+  "rmse_minutes": 15.035044710423858,
+  "mae_minutes": 10.707845052083334,
+  "epochs": 15
+}

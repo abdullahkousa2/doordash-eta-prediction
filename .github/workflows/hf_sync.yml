@@ -18,7 +18,7 @@ jobs:
           from huggingface_hub import HfApi
           HfApi().upload_folder(
               folder_path='.',
-              repo_id='CHANGE_THIS/CHANGE_THIS',
+              repo_id='Abdullahkousa2/doordash-eta-prediction',
               repo_type='space',
               token='$HF_TOKEN',
               ignore_patterns=['.git', '__pycache__', '*.pyc', '.github']

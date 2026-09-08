@@ -1,0 +1,48 @@
+{
+  "defaults": {
+    "total_items": 3.0,
+    "subtotal": 2200.0,
+    "num_distinct_items": 2.0,
+    "min_item_price": 595.0,
+    "max_item_price": 1095.0,
+    "total_onshift_dashers": 36.0,
+    "total_busy_dashers": 34.0,
+    "total_outstanding_orders": 40.0,
+    "estimated_order_place_duration": 251.0,
+    "estimated_store_to_consumer_driving_duration": 543.0,
+    "market_id": 2.0,
+    "order_protocol": 1.0,
+    "store_id": 6865,
+    "store_primary_category": "american"
+  },
+  "cuisines": [
+    "american",
+    "pizza",
+    "mexican",
+    "burger",
+    "sandwich",
+    "chinese",
+    "japanese",
+    "dessert",
+    "fast",
+    "indian",
+    "thai",
+    "italian",
+    "vietnamese",
+    "breakfast",
+    "mediterranean",
+    "other",
+    "salad",
+    "greek",
+    "seafood",
+    "barbecue"
+  ],
+  "markets": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ]
+}
